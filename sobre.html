@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Sobre</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState } = React;
+
+        function Sobre() {
+            const [dropdownOpen, setDropdownOpen] = useState(false);
+
+            return (
+                <>
+                    <nav className="navbar">
+                        <div style={{ display: "flex" }}>
+                            <a href="index.html">HOME</a>
+                            <a href="eventos.html">EVENTOS</a>
+                            <a href="contato.html">CONTATO</a>
+                            <div
+                                className="dropdown"
+                                onMouseEnter={() => setDropdownOpen(true)}
+                                onMouseLeave={() => setDropdownOpen(false)}
+                            >
+                                <button className="dropbtn">CURSOS</button>
+                                {dropdownOpen && (
+                                    <div className="dropdown-content">
+                                        <a href="ads.html">Análise e Desenvolvimento de Sistemas</a>
+                                        <a href="engproducao.html">Engenharia de Produção</a>
+                                    </div>
+                                )}
+                            </div>
+                            <a href="login.html">ENTRAR</a>
+                        </div>
+                        <a href="sobre.html">SOBRE</a>
+                    </nav>
+
+                    <header className="cabecalho_principal">
+                        <img src="img/Logo.jpg" alt="Instituto Federal São Paulo" />
+                    </header>
+
+                    <main>
+                        <p>O <strong>Instituto Federal de Educação, Ciência e Tecnologia de São Paulo</strong> - é uma autarquia federal de ensino. <br />
+ <br />
+Fundada em 1909, como Escola de Aprendizes Artífices, é reconhecida pela sociedade paulista por sua excelência no ensino público gratuito de qualidade. <br />
+ <br />
+Durante sua história, recebeu, também, os nomes de Escola Técnica Federal de São Paulo e Centro Federal de Educação Tecnológica de São Paulo. Com a transformação em Instituto, em dezembro de 2008, passou a ter relevância de universidade, destacando-se pela autonomia. <br />
+ <br />
+Com a mudança, o Instituto Federal de São Paulo passou a destinar 50% das vagas para os cursos técnicos e, no mínimo, 20% das vagas para os cursos de licenciatura, sobretudo nas áreas de Ciências e da Matemática. <br />
+ <br />
+Complementarmente, continuará oferecendo cursos de formação inicial e continuada, tecnologias, engenharias e pós-graduação. <br />
+ <br />
+Além dos cursos presenciais, o Instituto Federal de São Paulo oferece os cursos Técnicos em Administração e em Informática para Internet e, a partir de 2012, o superior de Formação de Professores na modalidade de Ensino a Distância (EaD). <br />
+ <br />
+O IFSP é organizado em diversos campus e possui mais de 40 mil alunos matriculados nas 36 unidades distribuídas pelo estado de São Paulo.; <br />
+ <br />
+Localizado em <strong>Rua Pedro Vicente, 625 - Canindé - São Paulo - SP - Brasil - Cep: 01109-010</strong></p>
+                    </main>
+
+                    <footer>
+                        <a href="https://www.facebook.com/ifsppirituba/?locale=pt_BR" target="_blank">
+                            <img src="img/facebook.png" alt="Facebook" width="40" />
+                        </a>
+                        <p>IFSP - Câmpus Pirituba - Av. Mutinga, 951 - Jardim Santo Elias - CEP: 05110-000 - São Paulo/SP - Contato: (011) 2504-0100</p>
+                    </footer>
+                </>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+        root.render(<Sobre />);
+    </script>
+</body>
+</html>
